@@ -11,7 +11,7 @@ botaoAdicionar.addEventListener("click", function() {
 
 		if(xhr.status == 200){
 			erroAjax.classList.add("invisivel");
-			var resposta =xhr.responseText; // E para acessar os dados da resposta, acessaremos a propriedade responseText do XMLHttpRequest
+			var resposta = xhr.responseText; // E para acessar os dados da resposta, acessaremos a propriedade responseText do XMLHttpRequest
         	console.log(resposta);
         	console.log(typeof resposta);
 

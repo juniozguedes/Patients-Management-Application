@@ -5,6 +5,7 @@
 body{
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-size: 14px;
+	transition:all 1.5s;
 }
 
 header{
@@ -33,6 +34,7 @@ header .container:before{
 }
 
 .container{
+	padding-top: 3%;
 	width: 60%;
 	height: 100%;
 	margin: 0 auto;
@@ -154,4 +156,50 @@ button[disabled=disabled], button:disabled {
 
 .invisivel{
     display: none;
+}
+
+.branco{
+	color: white;	
+}
+
+.preto{
+	color:black;
+}
+
+.bodybranco{
+	background-color: black;
+}
+
+.bodypreto{
+	background-color:white;
+}
+
+.red{ 
+	color:red;
+}
+
+.yellow{
+	color:yellow;
+}
+
+/* Responsividade */
+
+@media (min-width: 360px)
+{
+.container{
+	padding-top: 10%;
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+}
+}
+
+@media (min-width: 1024px)
+{
+.container{
+	padding-top: 8%;
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+}
 }

@@ -2,24 +2,42 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
-		<title>Aparecida Nutrição</title>
+		<title>Nutrição</title>
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-	</head>
-	<body>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<script src="node_modules/jquery/dist/jquery.min.js" ></script>
 
-		<header>
-			<div class="container">
-				<h2 class="titulo">Aparecida Nutrição</h2>
-			</div>
-		</header>
+	</head>
+	<body class="body akibody">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand titulo" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" id="diurno" href="#">Modo Diurno</a>
+              <a class="dropdown-item" id="noturno" href="#">Modo Noturno</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Filtrar Pacientes" aria-label="Search" name="filtro" id="filtrar-tabela">
+        </form>
+      </div>
+    </nav>
 		<main>
 			<section class="container">
-				<h2>Meus pacientes</h2>
-				<label for="filtrar-tabela">Filtre:</label>
-    			<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
-				<table>
+				<div class="col-md-12">
+				<h1 class="aki">Pacientes</h1>
+				<table class="table">
 					<thead>
 						<tr>
 							<th>Nome</th>
@@ -31,70 +49,64 @@
 					</thead>
 					<tbody id="tabela-pacientes">
 						<tr class="paciente" id="primeiro-paciente">
-							<td class="info-nome">Paulo</td>
-							<td class="info-peso">100</td>
-							<td class="info-altura">2.00</td>
-							<td class="info-gordura">10</td>
-							<td class="info-imc">0</td>
+							<td class="info-nome aki">Paulo</td>
+							<td class="info-peso aki">100</td>
+							<td class="info-altura aki">2.00</td>
+							<td class="info-gordura aki">10</td>
+							<td class="info-imc aki">0</td>
 						</tr>
 
 						<tr class="paciente" >
-							<td class="info-nome">João</td>
-							<td class="info-peso">80</td>
-							<td class="info-altura">1.72</td>
-							<td class="info-gordura">40</td>
-							<td class="info-imc">0</td>
+							<td class="info-nome aki">João</td>
+							<td class="info-peso aki">80</td>
+							<td class="info-altura aki">1.72</td>
+							<td class="info-gordura aki">40</td>
+							<td class="info-imc aki">0</td>
 						</tr>
 
 						<tr class="paciente" >
-							<td class="info-nome">Erica</td>
-							<td class="info-peso">54</td>
-							<td class="info-altura">1.64</td>
-							<td class="info-gordura">14</td>
-							<td class="info-imc">0</td>
+							<td class="info-nome aki">Erica</td>
+							<td class="info-peso aki">54</td>
+							<td class="info-altura aki">1.64</td>
+							<td class="info-gordura aki">14</td>
+							<td class="info-imc aki">0</td>
 						</tr>
 
 						<tr class="paciente">
-							<td class="info-nome">Douglas</td>
-							<td class="info-peso">85</td>
-							<td class="info-altura">1.73</td>
-							<td class="info-gordura">24</td>
-							<td class="info-imc">0</td>
-						</tr>
-						<tr class="paciente" >
-							<td class="info-nome">Tatiana</td>
-							<td class="info-peso">46</td>
-							<td class="info-altura">1.55</td>
-							<td class="info-gordura">19</td>
-							<td class="info-imc">0</td>
+							<td class="info-nome aki">Douglas</td>
+							<td class="info-peso aki">85</td>
+							<td class="info-altura aki">1.73</td>
+							<td class="info-gordura aki">24</td>
+							<td class="info-imc aki">0</td>
 						</tr>
 					</tbody>
 				</table>
 			<span id="erro-ajax" class="invisivel">Erro </span>
- 			<button id="buscar-pacientes" class="botao bto-principal">Buscar Pacientes</button>
+ 			<button id="buscar-pacientes" class="botao bto-principal">Importar Pacientes</button>
+ 		</div>
 			</section>
 		</main>
 
 		<section class="container">
-		    <h2 id="titulo-form">Adicionar novo paciente</h2>
+		    <h3 id="titulo-form" class="aki">Adicionar novo paciente</h2>
 
 		    <!-- Ul que populará Li's com mensagens de erro -->
 			<ul id="mensagens-erro"></ul>
 		    <form id="form-adiciona">
 		        <div class="">
-		            <label for="nome">Nome:</label>
+		            <label class="aki" for="nome">Nome:</label>
 		            <input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo">
 		        </div>
 		        <div class="grupo">
-		            <label for="peso">Peso:</label>
+		            <label for="peso" class="aki">Peso:</label>
 		            <input id="peso" name="peso" type="text" placeholder="digite o peso do seu paciente" class="campo campo-medio">
 		        </div>
 		        <div class="grupo">
-		            <label for="altura">Altura:</label>
+		            <label for="altura" class="aki">Altura:</label>
 		            <input id="altura" name="altura" type="text" placeholder="digite a altura do seu paciente" class="campo campo-medio">
 		        </div>
 		        <div class="grupo">
-		            <label for="gordura">% de Gordura:</label>
+		            <label for="gordura" class="aki">% de Gordura:</label>
 		            <input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
 		        </div>
 
@@ -107,6 +119,11 @@
 		<script src="js/remover-paciente.js" ></script>
 		<script src="js/filtra.js" ></script>
 		<script src="js/buscar-pacientes.js" ></script>
+		<script src="js/mudacor.js" ></script>
 
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	</body>
 </html>
